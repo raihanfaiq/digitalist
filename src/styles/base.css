@@ -1,0 +1,22 @@
+@layer base {
+	* {
+		@apply box-border;
+	}
+
+	html,
+	body {
+		@apply p-0 m-0 bg-white;
+		scroll-behavior: smooth;
+	}
+
+	a {
+		@apply no-underline;
+	}
+
+	button,
+	input,
+	textarea,
+	select {
+		@apply focus:outline-none;
+	}
+}
