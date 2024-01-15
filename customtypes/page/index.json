@@ -13,6 +13,14 @@
           "placeholder": ""
         }
       },
+      "layout": {
+        "type": "Link",
+        "config": {
+          "label": "layout",
+          "select": "document",
+          "customtypes": ["layouts"]
+        }
+      },
       "title": {
         "type": "StructuredText",
         "config": {

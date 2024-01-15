@@ -1,5 +1,6 @@
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
+import { PrismicPreview } from '@prismicio/next';
+import { createClient, repositoryName } from '@/prismicio';
+import Navigation from '@/components/Navigation';
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Navigation />
         {children}
         <PrismicPreview repositoryName={repositoryName} />
       </body>
