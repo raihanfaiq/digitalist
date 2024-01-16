@@ -69,7 +69,12 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HeroSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | CallToActionSlice
+  | AlternateGridSlice
+  | CustomerLogosSlice
+  | HeroSlice
+  | RichTextSlice;
 
 /**
  * Content for Default Page documents
@@ -495,36 +500,6 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Default variation for Children Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ChildrenSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
-
-/**
- * Slice variation for *Children*
- */
-type ChildrenSliceVariation = ChildrenSliceDefault;
-
-/**
- * Children Shared Slice
- *
- * - **API ID**: `children`
- * - **Description**: Children
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ChildrenSlice = prismic.SharedSlice<
-  "children",
-  ChildrenSliceVariation
->;
-
-/**
  * Primary content in *CustomerLogos → Primary*
  */
 export interface CustomerLogosSliceDefaultPrimary {
@@ -915,9 +890,6 @@ declare module "@prismicio/client" {
       CallToActionSliceVariation,
       CallToActionSliceDefault,
       CallToActionSliceAlignLeft,
-      ChildrenSlice,
-      ChildrenSliceVariation,
-      ChildrenSliceDefault,
       CustomerLogosSlice,
       CustomerLogosSliceDefaultPrimary,
       CustomerLogosSliceDefaultItem,
