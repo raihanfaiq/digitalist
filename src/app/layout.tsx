@@ -2,6 +2,7 @@ import { PrismicPreview } from '@prismicio/next';
 import { createClient, repositoryName } from '@/prismicio';
 import Navigation from '@/components/Navigation';
 import './global.css'
+import Footer from '@/components/Foooter';
 
 export default function RootLayout({
   children,
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body>
         <Navigation />
         {children}
+        <Footer />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
