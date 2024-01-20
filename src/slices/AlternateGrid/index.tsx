@@ -1,232 +1,108 @@
-import { PrismicNextImage } from "@prismicio/next";
-import { type Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from '@prismicio/next';
+import { type Content, isFilled } from '@prismicio/client';
+import { SliceComponentProps, PrismicRichText } from '@prismicio/react';
+import Image from 'next/image';
+import {
+  DetailedReactHTMLElement,
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+  PromiseLikeOfReactNode,
+} from 'react';
+import React from 'react';
 
 export type AlternateGridProps =
   SliceComponentProps<Content.AlternateGridSlice>;
 
 const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
+  const data = slice.primary;
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      className="es-bounded es-alternate-grid"
-    >
+    <section className="container flex flex-wrap pt-20 lg:gap-10 lg:flex-nowrap ">
       <div
-        className={`
-					es-alternate-grid__content
-					${
-            isFilled.image(slice.primary.image)
-              ? "es-alternate-grid__content--with-image"
-              : ""
-          }
-        `}
-      >
-        {isFilled.image(slice.primary.image) && (
-          <PrismicNextImage
-            field={slice.primary.image}
-            className={`
-              				es-alternate-grid__image
-							${
-                slice.variation === "imageRight"
-                  ? "es-alternate-grid__image--right"
-                  : "es-alternate-grid__image--left"
-              }
-            			`}
-          />
-        )}
-        <div className="es-alternate-grid__primary-content">
-          <div className="es-alternate-grid__primary-content__intro">
-            {isFilled.keyText(slice.primary.eyebrowHeadline) && (
-              <p className="es-alternate-grid__primary-content__intro__eyebrow">
-                {slice.primary.eyebrowHeadline}
-              </p>
-            )}
-            {isFilled.richText(slice.primary.title) && (
-              <div className="es-alternate-grid__primary-content__intro__headline">
-                <PrismicRichText field={slice.primary.title} />
-              </div>
-            )}
-            {isFilled.richText(slice.primary.description) && (
-              <div className="es-alternate-grid__primary-content__intro__description">
-                <PrismicRichText field={slice.primary.description} />
-              </div>
-            )}
-          </div>
-          {slice.items.length > 0 && (
-            <div className="es-alternate-grid__primary-content__items">
-              {slice.items.map((item, i) => (
-                <div key={`item-${i + 1}`} className="es-alternate-grid__item">
-                  {isFilled.richText(item.title) && (
-                    <div className="es-alternate-grid__item__heading">
-                      <PrismicRichText field={item.title} />
-                    </div>
-                  )}
-                  {isFilled.richText(item.description) && (
-                    <div className="es-alternate-grid__item__description">
-                      <PrismicRichText field={item.description} />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+        className={`flex items-center justify-center w-full lg:w-1/2 ${
+          slice.variation === 'imageRight' ? 'lg:order-1' : ''
+        }`}>
+        <div>
+          {isFilled.image(slice.primary.image) && (
+            <PrismicNextImage field={data.image} className={'object-cover'} />
           )}
         </div>
       </div>
 
-      <style>
-        {`
-					.es-bounded {
-							margin: 0px;
-							min-width: 0px;
-							position: relative;
-							padding: 8vw 1.25rem;
-					}
+      <div
+        className={`flex flex-wrap items-center w-full lg:w-1/2 ${
+          slice.variation === 'imageRight' ? 'lg:justify-end' : ''
+        }`}>
+        <div>
+          <div className="flex flex-col w-full mt-4">
+            <div className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl">
+              <PrismicRichText field={data.title} />
+            </div>
 
-					.es-alternate-grid {
-							font-family: system-ui, sans-serif;
-							background-color: #fff;
-							color: #333;
-					}
-					
-					.es-alternate-grid__content {
-							display: grid;
-							gap: 1.5rem;
-							grid-auto-flow: dense;
-					}
-					
-					@media (min-width: 640px) {
-							.es-alternate-grid__content--with-image {
-									grid-template-columns: repeat(2, 1fr);
-							}
-					}
-					
-					@media (min-width: 1200px) {
-							.es-alternate-grid__content--with-image {
-									grid-template-columns: repeat(2, 1fr);
-							}
-					}
-					
-					.es-alternate-grid__image {
-							width: auto;
-							height: auto;
-							max-width: 100%;
-							align-self: center;
-					}
-					
-					.es-alternate-grid__image--left {
-							order: 1;
-					}
+            <div className="max-w-2xl py-4 text-lg leading-normal lg:text-xl xl:text-xl">
+              <PrismicRichText field={data.description} />
+            </div>
+          </div>
 
-					.es-alternate-grid__image--left + div {
-							order: 2;
-					}
-					
-					.es-alternate-grid__image--right{
-							order: 2;
-					}
-
-					.es-alternate-grid__image--right + div {
-							order: 1;
-					}
-					
-					.es-alternate-grid__primary-content {
-							display: grid;
-							gap: 2rem;
-					}
-					
-					.es-alternate-grid__primary-content__intro {
-							display: grid;
-							gap: 0.5rem;
-					}
-					
-					.es-alternate-grid__primary-content__intro__eyebrow {
-							color: #8592e0;
-							font-size: 1.15rem;
-							font-weight: 500;
-							margin: 0;
-					}
-					
-					.es-alternate-grid__primary-content__intro__headline {
-							font-size: 1.625rem;
-							font-weight: 700;
-					}
-
-					.es-alternate-grid__primary-content__intro__headline * {
-							margin: 0;
-					}
-					
-					@media (min-width: 640px) {
-							.es-alternate-grid__primary-content__intro__headline {
-									font-size: 2rem;
-							}
-					}
-					
-					@media (min-width: 1024px) {
-							.es-alternate-grid__primary-content__intro__headline {
-									font-size: 2.5rem;
-							}
-					}
-					
-					@media (min-width: 1200px) {
-							.es-alternate-grid__primary-content__intro__headline {
-									font-size: 2.75rem;
-							}
-					}
-					
-					.es-alternate-grid__primary-content__intro__description {
-							font-size: 1.15rem;
-							max-width: 38rem;
-					}
-
-					.es-alternate-grid__primary-content__intro__description > p {
-							margin: 0;
-					}
-					
-					@media (min-width: 1200px) {
-							.es-alternate-grid__primary-content__intro__description {
-									font-size: 1.4rem;
-							}
-					}
-					
-					.es-alternate-grid__primary-content__items {
-							display: grid;
-							gap: 2rem;
-					}
-					
-					@media (min-width: 640px) {
-							.es-alternate-grid__primary-content__items {
-									grid-template-columns: repeat(2, 1fr);
-							}
-					}
-					
-					.es-alternate-grid__item {
-							display: grid;
-							align-content: start;
-					}
-					
-					.es-alternate-grid__item__heading {
-							font-weight: 700;
-							font-size: 1.17rem;
-							margin-top: 0;
-							margin-bottom: .5rem;
-					}
-
-					.es-alternate-grid__item__heading * {
-							margin: 0;
-					}
-					
-					.es-alternate-grid__item__description {
-							font-size: 0.9rem;
-					}
-					
-					.es-alternate-grid__item__description * {
-							margin: 0;
-					}
-			`}
-      </style>
+          <div className="w-full mt-5">
+            {slice.items.map((item, index) => (
+              <div key={index} className="flex items-start mt-8 space-x-3">
+                <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm1-4a1 1 0 100 2h2a1 1 0 100-2H8z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-xl font-medium text-gray-800">
+                    <PrismicRichText field={item.title} />
+                  </div>
+                  <div className="mt-1">
+                    {' '}
+                    <PrismicRichText field={item.description} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
 
 export default AlternateGrid;
+
+function Benefit(props: any) {
+  return (
+    <>
+      <div className="flex items-start mt-8 space-x-3">
+        <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm1-4a1 1 0 100 2h2a1 1 0 100-2H8z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
+        <div>
+          <h4 className="text-xl font-medium text-gray-800">{props.title}</h4>
+          <p className="mt-1">{props.children}</p>
+        </div>
+      </div>
+    </>
+  );
+}
