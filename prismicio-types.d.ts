@@ -11,15 +11,15 @@ type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
  */
 interface NavigationDocumentData {
   /**
-   * navbar color field in *Navigation*
+   * background color field in *Navigation*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.navbar_color
+   * - **API ID Path**: navigation.bg_color
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#color
    */
-  navbar_color: prismic.ColorField;
+  bg_color: prismic.ColorField;
 
   /**
    * Slice Zone field in *Navigation*
@@ -776,6 +776,16 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export interface NavigationItemSliceDefaultPrimary {
   /**
+   * Company logo field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.company_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
    * Company name field in *NavigationItem → Primary*
    *
    * - **Field Type**: Text
@@ -786,14 +796,14 @@ export interface NavigationItemSliceDefaultPrimary {
   company_name: prismic.KeyTextField;
 
   /**
-   * Company logo field in *NavigationItem → Primary*
+   * description field in *NavigationItem → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation_item.primary.company_logo
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: navigation_item.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  company_logo: prismic.ImageField<never>;
+  description: prismic.KeyTextField;
 }
 
 /**

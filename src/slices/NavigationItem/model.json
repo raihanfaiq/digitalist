@@ -12,6 +12,14 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "company_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Company logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "company_name": {
           "type": "Text",
           "config": {
@@ -19,12 +27,11 @@
             "placeholder": ""
           }
         },
-        "company_logo": {
-          "type": "Image",
+        "description": {
+          "type": "Text",
           "config": {
-            "label": "Company logo",
-            "constraint": {},
-            "thumbnails": []
+            "label": "description",
+            "placeholder": ""
           }
         }
       },

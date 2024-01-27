@@ -10,12 +10,12 @@ export default async function Navigation() {
   const header = await client.getByUID('navigation', 'header');
   const slices = header.data.slices[0]?.items ?? [];
   const { company_name, company_logo } = header.data.slices[0]?.primary ?? {};
-  const navbar_color = header.data.navbar_color
-    ? header.data.navbar_color
+  const bg_color = header.data.bg_color
+    ? header.data.bg_color
     : '#fff';
 
   return (
-    <section className={`sticky top-0 z-10 py-2`} style={{ backgroundColor: `${navbar_color}` }}>
+    <section className={`sticky top-0 z-10 py-2`} style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
         <nav className="container relative flex items-center justify-between w-full px-8 mx-auto xl:px-0">
           {/* Logo  */}

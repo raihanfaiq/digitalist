@@ -9,7 +9,6 @@
 				"type": "Text"
 			},
 			"company_logo": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
@@ -27,7 +26,15 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "shorter",
+				"type": "Text"
 			}
 		},
 		"items": [

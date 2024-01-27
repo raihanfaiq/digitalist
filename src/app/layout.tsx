@@ -2,7 +2,7 @@ import { PrismicPreview } from '@prismicio/next';
 import { createClient, repositoryName } from '@/prismicio';
 import Navigation from '@/components/Navigation';
 import './global.css'
-import Footer from '@/components/Foooter';
+import Footer from '@/components/Footer';
 
 export default function RootLayout({
   children,

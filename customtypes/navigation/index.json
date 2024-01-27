@@ -12,10 +12,10 @@
         },
         "type": "UID"
       },
-      "navbar_color": {
+      "bg_color": {
         "type": "Color",
         "config": {
-          "label": "navbar color",
+          "label": "background color",
           "placeholder": ""
         }
       },
