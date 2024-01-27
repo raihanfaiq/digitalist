@@ -3,41 +3,37 @@ import { docResolver } from '@/utils/prismic';
 import { Disclosure } from '@headlessui/react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { isFilled } from '@prismicio/client';
 
 export default async function Navigation() {
   const client = createClient();
   const header = await client.getByUID('navigation', 'header');
   const slices = header.data.slices[0]?.items ?? [];
+  const { company_name, company_logo } = header.data.slices[0]?.primary ?? {};
+  const navbar_color = header.data.navbar_color
+    ? header.data.navbar_color
+    : '#fff';
 
   return (
-    <section className="relative">
+    <section className={`sticky top-0 z-10 py-2`} style={{ backgroundColor: `${navbar_color}` }}>
       <div className="w-full">
-        <nav className="container relative flex items-center justify-between w-full p-8 mx-auto xl:px-0">
+        <nav className="container relative flex items-center justify-between w-full px-8 mx-auto xl:px-0">
           {/* Logo  */}
           <div className="container flex items-center justify-between w-full">
             <Link href="/">
-              <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500">
-                <span>
-                  {/* <Image
-                    src="/img/logo.svg"
+              <span className="flex items-center space-x-2 text-2xl font-medium">
+                {isFilled.image(company_logo) && (
+                  <Image
+                    src={company_logo.url}
                     alt="N"
-                    width="32"
-                    height="32"
-                    className="w-8"
-                  /> */}
-                  <svg
-                    className="w-8 h-8 text-indigo-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm1-4a1 1 0 100 2h2a1 1 0 100-2H8z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                    width={company_logo.dimensions?.width}
+                    height={company_logo.dimensions?.height}
+                    className="w-32"
+                  />
+                )}
+                <span>
+                  {isFilled.keyText(company_name) ? company_name : ''}
                 </span>
-                <span>Digitalist</span>
               </span>
             </Link>
             <div>

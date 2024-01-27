@@ -11,6 +11,17 @@ type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
  */
 interface NavigationDocumentData {
   /**
+   * navbar color field in *Navigation*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.navbar_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  navbar_color: prismic.ColorField;
+
+  /**
    * Slice Zone field in *Navigation*
    *
    * - **Field Type**: Slice Zone
@@ -761,6 +772,31 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceImageRight;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *NavigationItem → Primary*
+ */
+export interface NavigationItemSliceDefaultPrimary {
+  /**
+   * Company name field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Company logo field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.company_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *NavigationItem → Items*
  */
 export interface NavigationItemSliceDefaultItem {
@@ -794,7 +830,7 @@ export interface NavigationItemSliceDefaultItem {
  */
 export type NavigationItemSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<NavigationItemSliceDefaultPrimary>,
   Simplify<NavigationItemSliceDefaultItem>
 >;
 
@@ -945,6 +981,7 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceImageRight,
       NavigationItemSlice,
+      NavigationItemSliceDefaultPrimary,
       NavigationItemSliceDefaultItem,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,

@@ -12,6 +12,13 @@
         },
         "type": "UID"
       },
+      "navbar_color": {
+        "type": "Color",
+        "config": {
+          "label": "navbar color",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
