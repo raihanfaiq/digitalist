@@ -1,27 +1,44 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
+import { createClient } from '@/prismicio';
+import { isFilled } from '@prismicio/client';
 
-export default function Footer() {
+export default async function Footer() {
   const navigation = ['Product', 'Features', 'Pricing', 'Company', 'Blog'];
   const legal = ['Terms', 'Privacy', 'Legal'];
+  const client = createClient();
+  const footer = await client.getByUID('navigation', 'footer');
+  const slices = footer.data.slices[0]?.items ?? [];
+  const { company_name, company_logo, description } = footer.data.slices[0]?.primary ?? {};
+  const bg_color = footer.data.bg_color ? footer.data.bg_color : '#fff';
+
   return (
-    <div className="container relative pb-10">
+    <div
+      className="container relative pb-10 mt-24"
+      style={{ backgroundColor: `${bg_color}` }}>
       <section>
         <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <div>
-              {' '}
-              <Link
-                href="/"
-                className="flex items-center space-x-2 text-2xl font-medium text-indigo-500">
-                <span>Digitalist</span>
-              </Link>
-            </div>
+            <Link href="/">
+              <span className="flex items-center space-x-2 text-2xl font-medium">
+                {isFilled.image(company_logo) && (
+                  <Image
+                    src={company_logo.url}
+                    alt="N"
+                    width={company_logo.dimensions?.width}
+                    height={company_logo.dimensions?.height}
+                    className="w-32"
+                  />
+                )}
+                <span>
+                  {isFilled.keyText(company_name) ? company_name : ''}
+                </span>
+              </span>
+            </Link>
 
             <div className="max-w-md mt-4 text-gray-500">
-              Digitalist is a landing page & marketing website template for
-              startups and indie projects. Its built with Next.js & TailwindCSS.
+              <h2>{isFilled.keyText(description) ? description : ''}</h2>
             </div>
           </div>
 

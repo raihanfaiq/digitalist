@@ -12,6 +12,13 @@
         },
         "type": "UID"
       },
+      "bg_color": {
+        "type": "Color",
+        "config": {
+          "label": "background color",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

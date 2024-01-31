@@ -11,6 +11,17 @@ type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
  */
 interface NavigationDocumentData {
   /**
+   * background color field in *Navigation*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.bg_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  bg_color: prismic.ColorField;
+
+  /**
    * Slice Zone field in *Navigation*
    *
    * - **Field Type**: Slice Zone
@@ -915,6 +926,41 @@ type HeroSliceVariation =
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *NavigationItem → Primary*
+ */
+export interface NavigationItemSliceDefaultPrimary {
+  /**
+   * Company logo field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.company_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Company name field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * description field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *NavigationItem → Items*
  */
 export interface NavigationItemSliceDefaultItem {
@@ -948,7 +994,7 @@ export interface NavigationItemSliceDefaultItem {
  */
 export type NavigationItemSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<NavigationItemSliceDefaultPrimary>,
   Simplify<NavigationItemSliceDefaultItem>
 >;
 
@@ -1260,6 +1306,7 @@ declare module "@prismicio/client" {
       HeroSliceImageRight,
       HeroSliceHeroSimple,
       NavigationItemSlice,
+      NavigationItemSliceDefaultPrimary,
       NavigationItemSliceDefaultItem,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,

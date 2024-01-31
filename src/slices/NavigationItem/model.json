@@ -11,7 +11,30 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {},
+      "primary": {
+        "company_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Company logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "company_name": {
+          "type": "Text",
+          "config": {
+            "label": "Company name",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "description",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {
         "name": {
           "type": "Text",
