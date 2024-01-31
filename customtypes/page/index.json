@@ -35,6 +35,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "porto": {
+              "type": "SharedSlice"
+            },
+            "card_section": {
+              "type": "SharedSlice"
+            },
+            "slider": {
+              "type": "SharedSlice"
+            },
             "video": {
               "type": "SharedSlice"
             },

@@ -70,6 +70,9 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | PortoSlice
+  | CardSectionSlice
+  | SliderSlice
   | VideoSlice
   | CallToActionSlice
   | AlternateGridSlice
@@ -501,6 +504,76 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *CardSection → Primary*
+ */
+export interface CardSectionSliceDefaultPrimary {
+  /**
+   * title field in *CardSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CardSection → Items*
+ */
+export interface CardSectionSliceDefaultItem {
+  /**
+   * title field in *CardSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_section.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * content field in *CardSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_section.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CardSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CardSectionSliceDefaultPrimary>,
+  Simplify<CardSectionSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CardSection*
+ */
+type CardSectionSliceVariation = CardSectionSliceDefault;
+
+/**
+ * CardSection Shared Slice
+ *
+ * - **API ID**: `card_section`
+ * - **Description**: CardSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSectionSlice = prismic.SharedSlice<
+  "card_section",
+  CardSectionSliceVariation
+>;
+
+/**
  * Primary content in *CustomerLogos → Primary*
  */
 export interface CustomerLogosSliceDefaultPrimary {
@@ -747,9 +820,90 @@ export type HeroSliceImageRight = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceHeroSimplePrimary {
+  /**
+   * eyebrowHeadline field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Eyebrow
+   * - **API ID Path**: hero.primary.eyebrowHeadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrowHeadline: prismic.KeyTextField;
+
+  /**
+   * title field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * callToActionLabel field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.callToActionLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  callToActionLabel: prismic.KeyTextField;
+
+  /**
+   * callToActionLink field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.callToActionLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  callToActionLink: prismic.LinkField;
+}
+
+/**
+ * HeroSimple variation for Hero Slice
+ *
+ * - **API ID**: `heroSimple`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceHeroSimple = prismic.SharedSliceVariation<
+  "heroSimple",
+  Simplify<HeroSliceHeroSimplePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceImageRight;
+type HeroSliceVariation =
+  | HeroSliceDefault
+  | HeroSliceImageRight
+  | HeroSliceHeroSimple;
 
 /**
  * Hero Shared Slice
@@ -816,6 +970,103 @@ export type NavigationItemSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Porto → Primary*
+ */
+export interface PortoSliceDefaultPrimary {
+  /**
+   * lefttitle field in *Porto → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porto.primary.lefttitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  lefttitle: prismic.KeyTextField;
+
+  /**
+   * righttitle field in *Porto → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porto.primary.righttitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  righttitle: prismic.KeyTextField;
+
+  /**
+   * title field in *Porto → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porto.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Porto → Items*
+ */
+export interface PortoSliceDefaultItem {
+  /**
+   * image field in *Porto → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porto.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *Porto → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porto.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * paragraph field in *Porto → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porto.items[].paragraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  paragraph: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Porto Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PortoSliceDefaultPrimary>,
+  Simplify<PortoSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Porto*
+ */
+type PortoSliceVariation = PortoSliceDefault;
+
+/**
+ * Porto Shared Slice
+ *
+ * - **API ID**: `porto`
+ * - **Description**: Porto
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortoSlice = prismic.SharedSlice<"porto", PortoSliceVariation>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -859,6 +1110,63 @@ export type RichTextSlice = prismic.SharedSlice<
   "rich_text",
   RichTextSliceVariation
 >;
+
+/**
+ * Primary content in *Slider → Primary*
+ */
+export interface SliderSliceDefaultPrimary {
+  /**
+   * title field in *Slider → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Slider → Items*
+ */
+export interface SliderSliceDefaultItem {
+  /**
+   * image field in *Slider → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slider.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Slider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SliderSliceDefaultPrimary>,
+  Simplify<SliderSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Slider*
+ */
+type SliderSliceVariation = SliderSliceDefault;
+
+/**
+ * Slider Shared Slice
+ *
+ * - **API ID**: `slider`
+ * - **Description**: Slider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SliderSlice = prismic.SharedSlice<"slider", SliderSliceVariation>;
 
 /**
  * Primary content in *Video → Primary*
@@ -933,6 +1241,11 @@ declare module "@prismicio/client" {
       CallToActionSliceVariation,
       CallToActionSliceDefault,
       CallToActionSliceAlignLeft,
+      CardSectionSlice,
+      CardSectionSliceDefaultPrimary,
+      CardSectionSliceDefaultItem,
+      CardSectionSliceVariation,
+      CardSectionSliceDefault,
       CustomerLogosSlice,
       CustomerLogosSliceDefaultPrimary,
       CustomerLogosSliceDefaultItem,
@@ -941,17 +1254,29 @@ declare module "@prismicio/client" {
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceImageRightPrimary,
+      HeroSliceHeroSimplePrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceImageRight,
+      HeroSliceHeroSimple,
       NavigationItemSlice,
       NavigationItemSliceDefaultItem,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,
+      PortoSlice,
+      PortoSliceDefaultPrimary,
+      PortoSliceDefaultItem,
+      PortoSliceVariation,
+      PortoSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SliderSlice,
+      SliderSliceDefaultPrimary,
+      SliderSliceDefaultItem,
+      SliderSliceVariation,
+      SliderSliceDefault,
       VideoSlice,
       VideoSliceDefaultPrimary,
       VideoSliceVariation,
