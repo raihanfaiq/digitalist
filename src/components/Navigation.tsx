@@ -10,16 +10,16 @@ export default async function Navigation() {
   const header = await client.getByUID('navigation', 'header');
   const slices = header.data.slices[0]?.items ?? [];
   const { company_name, company_logo } = header.data.slices[0]?.primary ?? {};
-  const bg_color = header.data.bg_color
-    ? header.data.bg_color
-    : '#fff';
+  const bg_color = header.data.bg_color ? header.data.bg_color : '#fff';
 
   return (
-    <section className={`sticky top-0 z-10 py-2`} style={{ backgroundColor: `${bg_color}` }}>
+    <section
+      className={`sticky top-5 z-10 py-2 w-[90%] mx-auto rounded-full`}
+      style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
-        <nav className="container relative flex items-center justify-between w-full px-8 mx-auto xl:px-0">
+        <nav className="relative flex items-center justify-between">
           {/* Logo  */}
-          <div className="container flex items-center justify-between w-full">
+          <div className="flex items-center justify-between w-full mx-14">
             <Link href="/">
               <span className="flex items-center space-x-2 text-2xl font-medium">
                 {isFilled.image(company_logo) && (
@@ -28,7 +28,7 @@ export default async function Navigation() {
                     alt="N"
                     width={company_logo.dimensions?.width}
                     height={company_logo.dimensions?.height}
-                    className="w-32"
+                    className="w-28"
                   />
                 )}
                 <span>
@@ -36,12 +36,12 @@ export default async function Navigation() {
                 </span>
               </span>
             </Link>
-            <div>
+            <div className="flex gap-4 row">
               {slices.map((item, index) => (
                 <Link
                   key={index}
                   href={docResolver(item.link)}
-                  className="w-full px-4 py-2 -ml-4 text-gray-600 rounded-md hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none">
+                  className="w-full py-2 text-gray-600 rounded-md hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none">
                   {item.name}
                 </Link>
               ))}

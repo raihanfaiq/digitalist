@@ -10,7 +10,8 @@ export default async function Footer() {
   const client = createClient();
   const footer = await client.getByUID('navigation', 'footer');
   const slices = footer.data.slices[0]?.items ?? [];
-  const { company_name, company_logo, description } = footer.data.slices[0]?.primary ?? {};
+  const { company_name, company_logo, description } =
+    footer.data.slices[0]?.primary ?? {};
   const bg_color = footer.data.bg_color ? footer.data.bg_color : '#fff';
 
   return (
