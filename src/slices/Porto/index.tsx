@@ -17,12 +17,12 @@ const Porto = ({ slice }: PortoProps): JSX.Element => {
             <div className="text-amber-400">
               <PrismicRichText field={slice.primary.title} />
             </div>
-            <div className="text-2xl font-bold text-black md:text-5xl">
+            <div className="text-2xl font-bold text-[#FFF5EA] md:text-5xl">
               {slice.primary.lefttitle}
             </div>
           </div>
           <div className="w-full md:max-w-[505px] h-full flex items-center">
-            <p className="text-sm text-zinc-500 md:text-lg">
+            <p className="text-sm text-gray-200 md:text-lg">
               {slice.primary.righttitle}
             </p>
           </div>
@@ -46,15 +46,15 @@ const Porto = ({ slice }: PortoProps): JSX.Element => {
                   <div className="relative flex flex-col gap-4 p-7">
                     <div className="flex flex-col">
                       <div>
-                        <h2 className="text-base font-bold text-white md:text-2xl">
+                        <h2 className="text-base font-bold text-[#FFF5EA] md:text-2xl">
                           {el.title}
                         </h2>
-                        <p className="text-white opacity-[0.7] text-ellipsis text-sm md:text-lg">
+                        <p className="text-[#FFF5EA] opacity-[0.7] text-ellipsis text-sm md:text-lg">
                           {el.paragraph}
                         </p>
                       </div>
                     </div>
-                    <p className="text-sm text-white text-ellipsis md:text-lg">
+                    <p className="text-sm text-[#FFF5EA] text-ellipsis md:text-lg">
                       See Detail
                     </p>
                   </div>

@@ -19,7 +19,7 @@ export default function RootLayout({
           href="https://prismic.io/favicon.ico"
         />
       </head>
-      <body>
+      <body style={{ backgroundColor: '#13075F', color: '#FFF5EA' }}>
         <Navigation />
         {children}
         <Footer />

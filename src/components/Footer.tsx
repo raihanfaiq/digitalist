@@ -16,7 +16,7 @@ export default async function Footer() {
 
   return (
     <div
-      className="container relative pb-10 mt-24"
+      className="container relative pb-10 mt-24 rounded-t-[40px]"
       style={{ backgroundColor: `${bg_color}` }}>
       <section>
         <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 lg:grid-cols-5">

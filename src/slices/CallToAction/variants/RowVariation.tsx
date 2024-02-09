@@ -1,4 +1,11 @@
-import { type Content, isFilled, ImageField, LinkField, RichTextField, KeyTextField } from '@prismicio/client';
+import {
+  type Content,
+  isFilled,
+  ImageField,
+  LinkField,
+  RichTextField,
+  KeyTextField,
+} from '@prismicio/client';
 import { PrismicNextLink, PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 // make props that contain image, title, paragraph, buttonLink, buttonLabel
@@ -10,8 +17,13 @@ interface RowVariationProps {
   buttonLabel: KeyTextField;
 }
 
-
-const RowVariation = ({ image, title, paragraph, buttonLink, buttonLabel }: RowVariationProps ): JSX.Element => {
+const RowVariation = ({
+  image,
+  title,
+  paragraph,
+  buttonLink,
+  buttonLabel,
+}: RowVariationProps): JSX.Element => {
   return (
     <section
       className={`flex w-full pt-20 items-center justify-between text-center`}>
@@ -22,13 +34,13 @@ const RowVariation = ({ image, title, paragraph, buttonLink, buttonLabel }: RowV
       )} */}
 
       {title && (
-        <div className="max-w-2xl mt-3 text-xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl">
+        <div className="max-w-2xl mt-3 text-xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-4xl">
           <PrismicRichText field={title} />
         </div>
       )}
 
       {isFilled.richText(paragraph) && (
-        <div className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl">
+        <div className="max-w-2xl py-4 text-lg leading-normal text-gray-200 lg:text-xl xl:text-xl">
           <PrismicRichText field={paragraph} />
         </div>
       )}

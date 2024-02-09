@@ -13,7 +13,7 @@ export default async function Navigation() {
   const bg_color = header.data.bg_color ? header.data.bg_color : '#fff';
 
   return (
-    <section
+    <div
       className={`sticky top-5 z-10 py-2 w-[90%] mx-auto rounded-full`}
       style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
@@ -49,6 +49,6 @@ export default async function Navigation() {
           </div>
         </nav>
       </div>
-    </section>
+    </div>
   );
 }
