@@ -46,7 +46,7 @@ const DefaultVariation = ({
       )}
       {isFilled.link(buttonLink) && (
         <PrismicNextLink
-          className="px-8 py-4 mt-10 bg-white rounded-md shadow-lg"
+          className="px-8 my-8 py-4 text-lg font-medium text-center text-[#FFF5EA] bg-indigo-600 rounded-md"
           field={buttonLink}>
           {buttonLabel || 'Learn more…'}
         </PrismicNextLink>
