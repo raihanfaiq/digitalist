@@ -36,7 +36,7 @@ const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
         }`}>
         <div>
           <div className="flex flex-col w-full mt-4">
-            <div className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-4xl">
+            <div className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-6xl">
               <PrismicRichText field={data.title} />
             </div>
 

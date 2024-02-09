@@ -17,26 +17,24 @@ interface HeroSimpleProps {
 const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
   return (
     <section className="w-full h-full">
-      <div className="relative flex">
-        {isFilled.image(image) && (
-          <Image
-            src={image.url}
-            fill
-            style={{ objectFit: 'cover' }}
-            alt="Lalasia"
-          />
-        )}
-        <div className="linear-gradient(180deg, rgba(21, 20, 17, 0.00) 17.62%, #151411 84.84%) bg-gradient-to-t from-[#15141175] to-[transparent] absolute w-full h-full" />
-        <div className="relative p-7 md:p-[100px] flex flex-col gap-4">
-          <div className="flex flex-col p-10 text-center">
-            <div className="p-10">
-              <div className="text-base font-bold text-[#FFF5EA] md:text-2xl">
-                <PrismicRichText field={title} />
-              </div>
-              <div className="text-[#FFF5EA] opacity-[0.7] text-ellipsis text-sm md:text-lg">
-                <PrismicRichText field={description} />
-              </div>
-            </div>
+      <div className="relative flex pt-20">
+        <div className="flex flex-col items-center justify-center gap-4 p-10 text-center">
+          <div className="text-xl font-bold text-[#FFF5EA] lg:text-6xl">
+            <PrismicRichText field={title} />
+          </div>
+          <div className="w-4/5 mt-4 text-lg text-gray-200 lg:text-xl">
+            <PrismicRichText field={description} />
+          </div>
+          <div className="w-1/2">
+            {isFilled.image(image) && (
+              <Image
+                src={image.url}
+                width={image.dimensions?.width}
+                height={image.dimensions?.height}
+                style={{ objectFit: 'cover', opacity: 0.8 }}
+                alt="Lalasia"
+              />
+            )}
           </div>
         </div>
       </div>

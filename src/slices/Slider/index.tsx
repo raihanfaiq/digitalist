@@ -14,7 +14,7 @@ const Slider = ({ slice }: SliderProps): JSX.Element => {
   const { title } = slice.primary;
   return (
     <section className="flex justify-center w-full">
-      <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 py-10 mx-5 md:py-28 md:gap-24 md:mx-20 ">
+      <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 py-10 mx-5 md:gap-24 md:mx-20 ">
         <div className="flex flex-col gap-5 p-5 text-center">
           <div className="text-[#FFF5EA] text-2xl md:text-6xl font-bold">
             <PrismicRichText field={title} />

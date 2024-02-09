@@ -34,7 +34,7 @@ const RowVariation = ({
       )} */}
 
       {title && (
-        <div className="max-w-2xl mt-3 text-xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-4xl">
+        <div className="max-w-2xl mt-3 text-xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-6xl">
           <PrismicRichText field={title} />
         </div>
       )}
