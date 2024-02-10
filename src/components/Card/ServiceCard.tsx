@@ -26,14 +26,14 @@ const ServiceCard: FC<ServiceCardProps> = ({
               {icon}
             </div>
           ) : (
-            <span className="text-6xl font-bold md:text-6xl">
+            <span className="text-2xl font-bold lg:text-4xl">
               {String(id + 1).padStart(2, '0')}
             </span>
           )}
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
-          <h3 className="text-base font-bold md:text-2xl">{title}</h3>
-          <p className="text-sm text-gray-200 md:text-lg">{content}</p>
+          <h3 className="text-xl font-bold lg:text-4xl">{title}</h3>
+          <p className="text-xl text-gray-200 lg:text-2xl">{content}</p>
         </div>
       </div>
     );

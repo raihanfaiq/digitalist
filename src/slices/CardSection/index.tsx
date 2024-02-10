@@ -13,13 +13,11 @@ export type CardSectionProps = SliceComponentProps<Content.CardSectionSlice>;
 const CardSection = ({ slice }: CardSectionProps): JSX.Element => {
   return (
     <section className="container flex justify-center w-full">
-      <div className="flex flex-col items-center w-full gap-8 py-10 md:py-28 md:gap-24 md:mx-20 ">
-        <div className="flex flex-col gap-5 p-5 text-center">
-          <div className="text-[#FFF5EA] text-2xl md:text-6xl font-bold w-full items-center justify-center flex">
-            <PrismicRichText field={slice.primary.title} />
-          </div>
+      <div className="flex flex-col items-center w-full gap-8 py-24 lg:py-28 lg:gap-24">
+        <div className="text-[#FFF5EA] text-4xl w-4/5 text-center lg:text-6xl font-bold items-center justify-center flex">
+          <PrismicRichText field={slice.primary.title} />
         </div>
-        <div className="grid justify-between w-full grid-cols-3 gap-5 -md:grid-cols-1 -lg:grid-col-2">
+        <div className="grid justify-between w-full grid-cols-1 gap-5 lg:grid-cols-3">
           {slice.items.map((el, index) => (
             <ServiceCard
               key={index}

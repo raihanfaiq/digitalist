@@ -11,13 +11,13 @@ interface SimpleHeroProps {
 const SimpleHero = ({ image, title, description }: SimpleHeroProps) => {
   return (
     <section
-      className={`container pt-20 relative flex font-sans text-[#FFF5EA] flex-row`}>
+      className={`container pt-20 relative flex lg:flex-row flex-col-reverse`}>
       <div className="flex items-center w-full lg:w-1/2">
-        <div className="max-w-2xl mb-8">
-          <div className="text-6xl font-bold tracking-tight text-[#FFF5EA] lg:text-6xl lg:leading-tight xl:text-6xl xl:leading-tight">
+        <div className="max-w-2xl lg:mb-8">
+          <div className="text-4xl font-bold tracking-tight text-[#FFF5EA] lg:text-6xl xl:leading-tight">
             <PrismicRichText field={title} />
           </div>
-          <div className="py-5 text-lg leading-normal text-gray-200 lg:text-xl">
+          <div className="py-5 text-xl leading-normal text-gray-200 lg:text-2xl">
             <PrismicRichText field={description} />
           </div>
 
@@ -32,7 +32,7 @@ const SimpleHero = ({ image, title, description }: SimpleHeroProps) => {
           </div> */}
         </div>
       </div>
-      <div className="flex items-center justify-center w-full lg:w-1/2">
+      <div className="flex items-center justify-center w-full mb-10 lg:w-1/2 xl:mb-0">
         <div className="">
           {image.url && (
             <Image
