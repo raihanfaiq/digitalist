@@ -18,7 +18,7 @@ export type AlternateGridProps =
 const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
   const data = slice.primary;
   return (
-    <section className="container flex flex-wrap pt-10 lg:pt-20 lg:gap-10 lg:flex-nowrap ">
+    <section className="container flex flex-wrap pt-20 xl:pt-28 lg:gap-10 lg:flex-nowrap ">
       <div
         className={`flex items-center justify-center w-full lg:w-1/2 ${
           slice.variation === 'imageRight' ? 'lg:order-1' : ''
@@ -36,7 +36,7 @@ const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
         }`}>
         <div>
           <div className="flex flex-col w-full mt-4">
-            <div className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-6xl">
+            <div className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-4xl">
               <PrismicRichText field={data.title} />
             </div>
 

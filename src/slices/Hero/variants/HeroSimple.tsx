@@ -16,8 +16,8 @@ interface HeroSimpleProps {
 
 const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
   return (
-    <section className="container w-full h-full">
-      <div className="relative flex pt-8 lg:pt-20">
+    <section className="container w-full h-full pt-20 xl:pt-28">
+      <div className="relative flex">
         <div className="flex flex-col-reverse items-center justify-center gap-8 lg:flex-col lg:text-center">
           <div className="flex flex-col items-start gap-5 lg:items-center">
             <div className="text-4xl font-bold text-[#FFF5EA] lg:text-6xl xl:leading-tight">

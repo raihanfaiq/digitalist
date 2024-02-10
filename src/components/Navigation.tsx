@@ -18,9 +18,9 @@ export default async function Navigation() {
       style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
         <nav className="relative flex items-center justify-between">
-          {/* Logo  */}
-          <div className="flex items-center justify-between w-full mx-14">
+          <div className="flex items-center justify-between w-full mx-5 lg:mx-14">
             <Link href="/">
+              {/* Logo  */}
               <span className="flex items-center space-x-2 text-2xl font-medium">
                 {isFilled.image(company_logo) && (
                   <Image

@@ -6,7 +6,6 @@ interface ServiceCardProps {
   content: string;
   icon?: JSX.Element;
   numeric?: boolean;
-  horizontal?: boolean;
 }
 
 const ServiceCard: FC<ServiceCardProps> = ({
@@ -15,46 +14,26 @@ const ServiceCard: FC<ServiceCardProps> = ({
   icon,
   numeric,
   id,
-  horizontal,
 }) => {
-  if (horizontal) {
-    return (
-      <div className="relative flex items-center w-full gap-3 py-6 text-center md:gap-6">
-        <div>
-          {icon ? (
-            <div className="md:w-16 md:h-16 h-11 w-11 rounded-full bg-[#F9F9F9] flex items-center justify-center">
-              {icon}
-            </div>
-          ) : (
-            <span className="text-2xl font-bold lg:text-4xl">
-              {String(id + 1).padStart(2, '0')}
-            </span>
-          )}
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h3 className="text-xl font-bold lg:text-4xl">{title}</h3>
-          <p className="text-xl text-gray-200 lg:text-2xl">{content}</p>
-        </div>
-      </div>
-    );
-  }
   return (
-    <div className="flex flex-col items-center w-full gap-3 p-6 md:gap-6">
+    <div className="flex flex-col items-center w-full gap-3 p-6 lg:gap-6">
       <div>
         {icon ? (
           <div className="md:w-16 md:h-16 h-11 w-11 rounded-full bg-[#F9F9F9] flex items-center justify-center">
             {icon}
           </div>
         ) : (
-          <span className="text-6xl font-bold md:text-6xl text-primaryColor">
+          <span className="text-4xl font-bold lg:text-6xl text-[#FFF5EA]">
             {String(id).padStart(2, '0')}
           </span>
         )}
       </div>
       <div>
-        <h3 className="font-bold text-[#FFF5EA] text-lg">{title}</h3>
+        <h3 className="font-bold text-[#FFF5EA] text-2xl lg:text-2xl">
+          {title}
+        </h3>
       </div>
-      <p className="text-sm text-center text-gray-200 md:text-lg">{content}</p>
+      <p className="text-xl text-center text-gray-200 lg:text-2xl">{content}</p>
     </div>
   );
 };
