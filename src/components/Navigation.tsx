@@ -36,7 +36,7 @@ export default async function Navigation() {
                 </span>
               </span>
             </Link>
-            <div className="flex gap-4 flex-nowrap row">
+            <div className="flex gap-4 xl:gap-10 flex-nowrap row">
               {slices.map((item, index) => (
                 <Link
                   key={index}
@@ -46,8 +46,8 @@ export default async function Navigation() {
                 </Link>
               ))}
             </div>
-            <div className="hidden xl:flex">
-              <h4 className="text-gray-600">Contact Us</h4>
+            <div className="hidden px-4 py-2 text-lg font-medium text-center bg-indigo-600 rounded-full xl:flex">
+              <h4 className="text-[#FFF5EA] text-sm">Contact Us</h4>
             </div>
           </div>
         </nav>
