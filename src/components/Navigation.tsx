@@ -14,7 +14,7 @@ export default async function Navigation() {
 
   return (
     <div
-      className={`sticky top-5 z-10 py-2 w-[90%] opacity-90 backdrop-filter backdrop-blur-2xl mx-auto rounded-full`}
+      className={`sticky top-5 z-10 py-2 w-[90%] backdrop-filter backdrop-blur-2xl mx-auto rounded-full`}
       style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
         <nav className="relative flex items-center justify-between">
@@ -28,7 +28,7 @@ export default async function Navigation() {
                     alt="N"
                     width={company_logo.dimensions?.width}
                     height={company_logo.dimensions?.height}
-                    className="w-28"
+                    className="w-20 xl:w-28"
                   />
                 )}
                 <span>
@@ -36,15 +36,18 @@ export default async function Navigation() {
                 </span>
               </span>
             </Link>
-            <div className="flex gap-4 row">
+            <div className="flex gap-4 flex-nowrap row">
               {slices.map((item, index) => (
                 <Link
                   key={index}
                   href={docResolver(item.link)}
-                  className="w-full py-2 text-gray-600 rounded-md hover:text-indigo-500">
+                  className="flex w-full py-2 text-gray-600 rounded-md text-nowrap flex-nowrap hover:text-indigo-500">
                   {item.name}
                 </Link>
               ))}
+            </div>
+            <div className="hidden xl:flex">
+              <h4 className="text-gray-600">Contact Us</h4>
             </div>
           </div>
         </nav>
