@@ -41,7 +41,7 @@ export default async function Navigation() {
                 <Link
                   key={index}
                   href={docResolver(item.link)}
-                  className="w-full py-2 text-gray-600 rounded-md hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none">
+                  className="w-full py-2 text-gray-600 rounded-md hover:text-indigo-500">
                   {item.name}
                 </Link>
               ))}
