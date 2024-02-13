@@ -18,12 +18,12 @@ const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
         <div className="relative p-7 md:p-[100px] flex flex-col gap-4">
           <div className="flex flex-col text-center p-10">
             <div className="p-10">
-              <h2 className="text-white font-bold text-base md:text-2xl">
+              <div className="text-white font-bold text-base md:text-2xl">
                 <PrismicRichText field={title} />
-              </h2>
-              <p className="text-white opacity-[0.7] text-ellipsis text-sm md:text-lg">
+              </div>
+              <div className="text-white opacity-[0.7] text-ellipsis text-sm md:text-lg">
                 <PrismicRichText field={description} />
-              </p>
+              </div>
             </div>
           </div>
         </div>
