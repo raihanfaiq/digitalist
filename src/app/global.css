@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .container {
-    @apply px-20 mx-auto;
+    @apply px-8 mx-auto lg:px-20;
 }

@@ -1,7 +1,12 @@
-import { Content, ImageField, RichTextField, isFilled } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import Image from "next/image";
-import { articleBanner } from "../../../../public/images";
+import {
+  Content,
+  ImageField,
+  RichTextField,
+  isFilled,
+} from '@prismicio/client';
+import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
+import Image from 'next/image';
+import { articleBanner } from '../../../../public/images';
 
 interface HeroSimpleProps {
   image: ImageField;
@@ -11,21 +16,18 @@ interface HeroSimpleProps {
 
 const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
   return (
-    <section className="h-full w-full ">
+    <section className="container w-full h-full pt-20 xl:pt-28">
       <div className="relative flex">
-        {isFilled.image(image) && <Image src={image.url} fill style={{ objectFit: "cover" }} alt="Lalasia" />}
-        <div className="linear-gradient(180deg, rgba(21, 20, 17, 0.00) 17.62%, #151411 84.84%) bg-gradient-to-t from-[#15141175] to-[transparent] absolute w-full h-full" />
-        <div className="relative p-7 md:p-[100px] flex flex-col gap-4">
-          <div className="flex flex-col text-center p-10">
-            <div className="p-10">
-              <div className="text-white font-bold text-base md:text-2xl">
-                <PrismicRichText field={title} />
-              </div>
-              <div className="text-white opacity-[0.7] text-ellipsis text-sm md:text-lg">
-                <PrismicRichText field={description} />
-              </div>
+        <div className="flex flex-col-reverse items-center justify-center gap-8 lg:flex-col lg:text-center">
+          <div className="flex flex-col items-start gap-5 lg:items-center">
+            <div className="text-4xl font-bold text-[#FFF5EA] lg:text-6xl xl:leading-tight">
+              <PrismicRichText field={title} />
+            </div>
+            <div className="mt-4 text-xl text-gray-200 lg:w-4/5 lg:text-2xl">
+              <PrismicRichText field={description} />
             </div>
           </div>
+          <div className="w-full lg:w-1/2">{isFilled.image(image) && <Image src={image.url} width={image.dimensions?.width} height={image.dimensions?.height} style={{ objectFit: "cover" }} alt="Lalasia" />}</div>
         </div>
       </div>
     </section>

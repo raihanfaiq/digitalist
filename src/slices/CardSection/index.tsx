@@ -1,6 +1,6 @@
-import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
-import ServiceCard from "@/components/Card/ServiceCard";
+import { Content, isFilled } from '@prismicio/client';
+import { SliceComponentProps, PrismicRichText } from '@prismicio/react';
+import ServiceCard from '@/components/Card/ServiceCard';
 
 /**
  * Props for `CardSection`.
@@ -12,19 +12,21 @@ export type CardSectionProps = SliceComponentProps<Content.CardSectionSlice>;
  */
 const CardSection = ({ slice }: CardSectionProps): JSX.Element => {
   return (
-    <section className="w-full flex justify-center">
-      <div className="flex flex-col py-10 md:py-28 items-center  gap-8 md:gap-24 w-full max-w-screen-xl mx-5 md:mx-20 ">
-        <div className="flex flex-col text-center gap-5 p-5">
-          <h1 className="text-black text-2xl md:text-6xl font-bold">
-            <PrismicRichText field={slice.primary.title} />
-          </h1>
+    <section className="container flex justify-center w-full">
+      <div className="flex flex-col items-center w-full gap-8 pt-14 lg:py-24 lg:gap-20">
+        <div className="text-[#FFF5EA] text-3xl text-center lg:text-6xl font-bold items-center justify-center flex">
+          <PrismicRichText field={slice.primary.title} />
         </div>
-        <div className="w-full min-h-[632px] flex flex-col xl:flex-row justify-between gap-6  ">
-          <div className="w-full flex justify-between flex-wrap gap-5">
-            {slice.items.map((el, index) => (
-              <ServiceCard key={index} numeric title={isFilled.keyText(el.title) ? el.title : ""} content={isFilled.keyText(el.content) ? el.content : ""} id={index} />
-            ))}
-          </div>
+        <div className="grid justify-between w-full grid-cols-1 gap-5 lg:grid-cols-3">
+          {slice.items.map((el, index) => (
+            <ServiceCard
+              key={index}
+              numeric
+              title={isFilled.keyText(el.title) ? el.title : ''}
+              content={isFilled.keyText(el.content) ? el.content : ''}
+              id={index + 1}
+            />
+          ))}
         </div>
       </div>
     </section>

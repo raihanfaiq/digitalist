@@ -20,11 +20,10 @@ const FaqSection = ({ slice }: FaqSectionProps): JSX.Element => {
 
   return (
     <section className="container mx-auto px-4" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      <div className="flex flex-col md:flex-row">
-        <div className="text-center pb-5 text-4xl font-bold md:mr-4">
+      <div className="flex flex-col xl:flex-row">
+        <div className="text-center flex flex-col items-center pb-5 text-4xl font-bold xl:mr-4">
           <PrismicRichText field={slice.primary.title} />
           {isFilled.image(slice.primary.image) && <Image src={slice.primary.image.url} width={500} height={500} style={{ objectFit: "cover" }} alt="Lalasia" />}
-          {/* <Image src={articleBanner} alt="Faq Image" className="w-full md:w-100 py-5" /> */}
         </div>
         <div className="flex-1">
           {faqs.map((item: any, index: number) => (

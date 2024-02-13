@@ -10,17 +10,17 @@ export default async function Navigation() {
   const header = await client.getByUID('navigation', 'header');
   const slices = header.data.slices[0]?.items ?? [];
   const { company_name, company_logo } = header.data.slices[0]?.primary ?? {};
-  const bg_color = header.data.bg_color
-    ? header.data.bg_color
-    : '#fff';
+  const bg_color = header.data.bg_color ? header.data.bg_color : '#fff';
 
   return (
-    <section className={`sticky top-0 z-10 py-2`} style={{ backgroundColor: `${bg_color}` }}>
+    <div
+      className={`sticky top-5 z-10 py-2 w-[90%] backdrop-filter backdrop-blur-2xl mx-auto rounded-full`}
+      style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
-        <nav className="container relative flex items-center justify-between w-full px-8 mx-auto xl:px-0">
-          {/* Logo  */}
-          <div className="container flex items-center justify-between w-full">
+        <nav className="relative flex items-center justify-between">
+          <div className="flex items-center justify-between w-full mx-5 lg:mx-14">
             <Link href="/">
+              {/* Logo  */}
               <span className="flex items-center space-x-2 text-2xl font-medium">
                 {isFilled.image(company_logo) && (
                   <Image
@@ -28,7 +28,7 @@ export default async function Navigation() {
                     alt="N"
                     width={company_logo.dimensions?.width}
                     height={company_logo.dimensions?.height}
-                    className="w-32"
+                    className="w-20 xl:w-28"
                   />
                 )}
                 <span>
@@ -36,19 +36,22 @@ export default async function Navigation() {
                 </span>
               </span>
             </Link>
-            <div>
+            <div className="flex gap-4 xl:gap-10 flex-nowrap row">
               {slices.map((item, index) => (
                 <Link
                   key={index}
                   href={docResolver(item.link)}
-                  className="w-full px-4 py-2 -ml-4 text-gray-600 rounded-md hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none">
+                  className="flex w-full py-2 text-gray-600 rounded-md text-nowrap flex-nowrap hover:text-indigo-500">
                   {item.name}
                 </Link>
               ))}
             </div>
+            <div className="hidden px-4 py-2 text-lg font-medium text-center bg-indigo-600 rounded-full xl:flex">
+              <h4 className="text-[#FFF5EA] text-sm">Contact Us</h4>
+            </div>
           </div>
         </nav>
       </div>
-    </section>
+    </div>
   );
 }
