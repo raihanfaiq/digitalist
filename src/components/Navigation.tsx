@@ -14,11 +14,11 @@ export default async function Navigation() {
 
   return (
     <div
-      className={`sticky top-5 z-10 py-2 w-[90%] backdrop-filter backdrop-blur-2xl mx-auto rounded-full`}
+      className={`sticky container top-5 z-10 py-2 w-[90%] backdrop-filter backdrop-blur-2xl mx-auto rounded-full`}
       style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
         <nav className="relative flex items-center justify-between">
-          <div className="flex items-center justify-between w-full mx-5 lg:mx-14">
+          <div className="flex items-center justify-between w-full">
             <Link href="/">
               {/* Logo  */}
               <span className="flex items-center space-x-2 text-2xl font-medium">

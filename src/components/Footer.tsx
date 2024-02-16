@@ -5,7 +5,6 @@ import { createClient } from '@/prismicio';
 import { isFilled } from '@prismicio/client';
 
 export default async function Footer() {
-  const navigation = ['Product', 'Features', 'Pricing', 'Company', 'Blog'];
   const legal = ['Terms', 'Privacy', 'Legal'];
   const client = createClient();
   const footer = await client.getByUID('navigation', 'footer');
@@ -19,8 +18,8 @@ export default async function Footer() {
       className="container relative pb-10 mt-24 rounded-t-[40px]"
       style={{ backgroundColor: `${bg_color}` }}>
       <section>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-5 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100">
+          <div className="col-span-3">
             <Link href="/">
               <span className="flex items-center space-x-2 text-2xl font-medium">
                 {isFilled.image(company_logo) && (
@@ -29,7 +28,7 @@ export default async function Footer() {
                     alt="N"
                     width={company_logo.dimensions?.width}
                     height={company_logo.dimensions?.height}
-                    className="w-32"
+                    className="w-28"
                   />
                 )}
                 <span>
@@ -38,25 +37,15 @@ export default async function Footer() {
               </span>
             </Link>
 
-            <div className="max-w-md mt-4 text-gray-500">
-              <h2>{isFilled.keyText(description) ? description : ''}</h2>
+            <div className="mt-4 text-gray-500 w-[90%]">
+              <h2 className="text-justify">
+                {isFilled.keyText(description) ? description : ''}
+              </h2>
             </div>
           </div>
 
-          <div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {navigation.map((item, index) => (
-                <Link
-                  key={index}
-                  href="/"
-                  className="w-full px-4 py-2 text-gray-500 rounded-md hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none">
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
+          <div className="">
+            {/* <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
                 <Link
                   key={index}
@@ -65,36 +54,45 @@ export default async function Footer() {
                   {item}
                 </Link>
               ))}
-            </div>
-          </div>
-          <div className="">
-            <div>Follow us</div>
-            <div className="flex mt-5 space-x-5 text-gray-400">
-              <a
-                href="https://twitter.com/web3templates"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Twitter</span>
-                <Twitter />
-              </a>
-              <a
-                href="https://facebook.com/web3templates"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Facebook</span>
-                <Facebook />
-              </a>
-              <a
-                href="https://instagram.com/web3templates"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Instagram</span>
-                <Instagram />
-              </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener">
-                <span className="sr-only">Linkedin</span>
-                <Linkedin />
-              </a>
+            </div> */}
+            <div className="text-xl font-bold text-black">Get in touch</div>
+            <div className="flex flex-col gap-4 mt-5 space-x-2 text-gray-400">
+              <div className="flex items-center gap-2 ml-2">
+                <a
+                  href="https://facebook.com/web3templates"
+                  target="_blank"
+                  rel="noopener">
+                  <span className="sr-only">Facebook</span>
+                  <Facebook />
+                </a>
+                <div className="font-semibold text-gray-500 text-md text-nowrap">
+                  Digitalist Indonesia
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://instagram.com/web3templates"
+                  target="_blank"
+                  rel="noopener">
+                  <span className="sr-only">Instagram</span>
+                  <Instagram />
+                </a>
+                <div className="font-semibold text-gray-500 text-md">
+                  digitalist
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://facebook.com/web3templates"
+                  target="_blank"
+                  rel="noopener">
+                  <span className="sr-only">Facebook</span>
+                  <Facebook />
+                </a>
+                <div className="font-semibold text-gray-500 text-md text-nowrap">
+                  digitalistindonesia@gmail.com
+                </div>
+              </div>
             </div>
           </div>
         </div>
