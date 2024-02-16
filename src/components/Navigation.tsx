@@ -46,7 +46,9 @@ export default async function Navigation() {
                 </Link>
               ))}
               <div className="hidden px-4 py-2 text-lg font-medium text-center bg-indigo-600 rounded-full xl:flex">
-                <h4 className="text-[#FFF5EA] text-sm">Contact Us</h4>
+                <h4 className="text-[#FFF5EA] text-sm text-nowrap">
+                  Contact Us
+                </h4>
               </div>
             </div>
           </div>
