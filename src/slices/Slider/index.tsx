@@ -19,10 +19,7 @@ const Slider = ({ slice }: SliderProps): JSX.Element => {
           <div className="text-[#FFF5EA] text-2xl md:text-6xl font-bold">
             <PrismicRichText field={title} />
           </div>
-          <p className="text-gray-200 text-sm md:text-lg w-full md:w-[600px]">
-            We display products based on the latest products we have, if you
-            want to see our old products please enter the name of the item
-          </p>
+          <p className="text-gray-200 text-sm md:text-lg w-full md:w-[600px]">We display products based on the latest products we have, if you want to see our old products please enter the name of the item</p>
         </div>
         <div className="w-full h-[300px] md:h-[500px] xl:h-[720px] p-5">
           <ArticlesHeroSlide />

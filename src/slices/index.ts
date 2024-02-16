@@ -7,6 +7,7 @@ export const components = {
   call_to_action: dynamic(() => import("./CallToAction")),
   card_section: dynamic(() => import("./CardSection")),
   customer_logos: dynamic(() => import("./CustomerLogos")),
+  faq_section: dynamic(() => import("./FaqSection")),
   hero: dynamic(() => import("./Hero")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   porto: dynamic(() => import("./Porto")),

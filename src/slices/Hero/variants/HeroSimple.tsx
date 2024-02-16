@@ -27,17 +27,7 @@ const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
               <PrismicRichText field={description} />
             </div>
           </div>
-          <div className="w-full lg:w-1/2">
-            {isFilled.image(image) && (
-              <Image
-                src={image.url}
-                width={image.dimensions?.width}
-                height={image.dimensions?.height}
-                style={{ objectFit: 'cover' }}
-                alt="Lalasia"
-              />
-            )}
-          </div>
+          <div className="w-full lg:w-1/2">{isFilled.image(image) && <Image src={image.url} width={image.dimensions?.width} height={image.dimensions?.height} style={{ objectFit: "cover" }} alt="Lalasia" />}</div>
         </div>
       </div>
     </section>

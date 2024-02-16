@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "faq_section": {
+              "type": "SharedSlice"
+            },
             "porto": {
               "type": "SharedSlice"
             },

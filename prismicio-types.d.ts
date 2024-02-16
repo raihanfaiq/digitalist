@@ -126,6 +126,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FaqSectionSlice
   | PortoSlice
   | CardSectionSlice
   | SliderSlice
@@ -720,6 +721,86 @@ type CustomerLogosSliceVariation = CustomerLogosSliceDefault;
 export type CustomerLogosSlice = prismic.SharedSlice<
   "customer_logos",
   CustomerLogosSliceVariation
+>;
+
+/**
+ * Primary content in *FaqSection → Primary*
+ */
+export interface FaqSectionSliceDefaultPrimary {
+  /**
+   * title field in *FaqSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * image field in *FaqSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *FaqSection → Items*
+ */
+export interface FaqSectionSliceDefaultItem {
+  /**
+   * question field in *FaqSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * answer field in *FaqSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_section.items[].answer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  answer: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FaqSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSectionSliceDefaultPrimary>,
+  Simplify<FaqSectionSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FaqSection*
+ */
+type FaqSectionSliceVariation = FaqSectionSliceDefault;
+
+/**
+ * FaqSection Shared Slice
+ *
+ * - **API ID**: `faq_section`
+ * - **Description**: FaqSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSectionSlice = prismic.SharedSlice<
+  "faq_section",
+  FaqSectionSliceVariation
 >;
 
 /**
@@ -1348,6 +1429,11 @@ declare module "@prismicio/client" {
       CustomerLogosSliceDefaultItem,
       CustomerLogosSliceVariation,
       CustomerLogosSliceDefault,
+      FaqSectionSlice,
+      FaqSectionSliceDefaultPrimary,
+      FaqSectionSliceDefaultItem,
+      FaqSectionSliceVariation,
+      FaqSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceImageRightPrimary,
