@@ -18,7 +18,7 @@ export type AlternateGridProps =
 const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
   const data = slice.primary;
   return (
-    <section className="container flex flex-wrap pt-20 xl:pt-28 lg:gap-10 lg:flex-nowrap ">
+    <section className="container flex flex-wrap py-20 bg-[#FFF5EA] rounded-2xl lg:gap-10 lg:flex-nowrap">
       <div
         className={`flex items-center justify-center w-full lg:w-1/2 ${
           slice.variation === 'imageRight' ? 'lg:order-1' : ''
@@ -35,12 +35,12 @@ const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
           slice.variation === 'imageRight' ? 'lg:justify-end' : ''
         }`}>
         <div>
-          <div className="flex flex-col w-full mt-4">
-            <div className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-4xl">
+          <div className="flex flex-col w-full">
+            <div className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl">
               <PrismicRichText field={data.title} />
             </div>
 
-            <div className="max-w-2xl py-4 text-lg leading-normal text-gray-200 lg:text-xl xl:text-xl">
+            <div className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl">
               <PrismicRichText field={data.description} />
             </div>
           </div>
@@ -50,7 +50,7 @@ const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
               <div key={index} className="flex items-start mt-8 space-x-3">
                 <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
                   <svg
-                    className="w-6 h-6 text-[#FFF5EA]"
+                    className="w-6 h-6 text-gray-800"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -62,10 +62,10 @@ const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xl font-medium text-[#FFF5EA]">
+                  <div className="text-xl font-medium text-gray-800">
                     <PrismicRichText field={item.title} />
                   </div>
-                  <div className="mt-1 text-gray-200">
+                  <div className="mt-1 text-gray-500">
                     {' '}
                     <PrismicRichText field={item.description} />
                   </div>
@@ -87,7 +87,7 @@ function Benefit(props: any) {
       <div className="flex items-start mt-8 space-x-3">
         <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
           <svg
-            className="w-6 h-6 text-[#FFF5EA]"
+            className="w-6 h-6 text-gray-800"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,9 @@ function Benefit(props: any) {
           </svg>
         </div>
         <div>
-          <h4 className="text-xl font-medium text-[#FFF5EA]">{props.title}</h4>
+          <h4 className="text-xl font-medium text-text-gray-800">
+            {props.title}
+          </h4>
           <p className="mt-1">{props.children}</p>
         </div>
       </div>

@@ -11,7 +11,7 @@ export type PortoProps = SliceComponentProps<Content.PortoSlice>;
 const Porto = ({ slice }: PortoProps): JSX.Element => {
   return (
     <section className="flex justify-center w-full ">
-      <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 py-10 mx-5 xl:py-28 md:gap-24 md:mx-20 ">
+      <div className="flex flex-col items-center w-full max-w-screen-xl gap-8 py-20 mx-5 xl:py-28 md:gap-24 md:mx-20 ">
         <div className="flex flex-col items-start justify-between w-full gap-4 md:items-center md:flex-row ">
           <div className="flex flex-col w-full gap-2 md:gap-4">
             <div className="text-amber-400">

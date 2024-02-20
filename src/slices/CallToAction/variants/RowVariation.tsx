@@ -26,7 +26,7 @@ const RowVariation = ({
 }: RowVariationProps): JSX.Element => {
   return (
     <section
-      className={`container flex w-full pt-20 xl:pt-28 items-center justify-between text-center`}>
+      className={`container flex w-full py-20 rounded-t-2xl xl:pt-28 items-center justify-between text-center`}>
       {/* {title && (
         <div className="text-sm font-bold tracking-wider text-indigo-600 uppercase">
           <PrismicRichText field={title} />

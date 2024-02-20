@@ -11,7 +11,7 @@ interface SimpleHeroProps {
 const SimpleHero = ({ image, title, description }: SimpleHeroProps) => {
   return (
     <section
-      className={`container pt-20 xl:pt-28 relative flex lg:flex-row flex-col-reverse`}>
+      className={`container h-screen rounded-t-2xl relative flex lg:flex-row flex-col-reverse`}>
       <div className="flex items-center w-full lg:w-1/2">
         <div className="max-w-2xl lg:mb-8">
           <div className="text-4xl font-bold tracking-tight text-[#FFF5EA] lg:text-6xl xl:leading-tight">

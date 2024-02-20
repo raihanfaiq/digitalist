@@ -20,7 +20,7 @@ const Video = ({ slice }: VideoProps): JSX.Element => {
   const [Playing, setPlaying] = useState(false);
 
   return (
-    <section className="container relative flex items-center justify-center w-full pt-20 mx-auto xl:pt-28 h-80 aspect-w-16 aspect-h-9">
+    <section className="container relative flex items-center justify-center w-full py-20 rounded-t-2xl mx-auto xl:pt-28 h-80 aspect-w-16 aspect-h-9">
       <ReactPlayer
         controls={true}
         onPlay={() => setPlaying(true)}

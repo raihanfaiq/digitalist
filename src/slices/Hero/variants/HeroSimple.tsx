@@ -16,7 +16,7 @@ interface HeroSimpleProps {
 
 const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
   return (
-    <section className="container w-full h-full pt-20 xl:pt-28">
+    <section className="container w-full h-screen rounded-t-2xl xl:pt-28">
       <div className="relative flex">
         <div className="flex flex-col-reverse items-center justify-center gap-8 lg:flex-col lg:text-center">
           <div className="flex flex-col items-start gap-5 lg:items-center">
@@ -27,7 +27,17 @@ const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
               <PrismicRichText field={description} />
             </div>
           </div>
-          <div className="w-full lg:w-1/2">{isFilled.image(image) && <Image src={image.url} width={image.dimensions?.width} height={image.dimensions?.height} style={{ objectFit: "cover" }} alt="Lalasia" />}</div>
+          <div className="w-full lg:w-1/2">
+            {isFilled.image(image) && (
+              <Image
+                src={image.url}
+                width={image.dimensions?.width}
+                height={image.dimensions?.height}
+                style={{ objectFit: 'cover' }}
+                alt="Lalasia"
+              />
+            )}
+          </div>
         </div>
       </div>
     </section>
