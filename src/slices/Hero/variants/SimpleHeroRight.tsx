@@ -1,4 +1,9 @@
-import { Content, ImageField, RichTextField } from '@prismicio/client';
+import {
+  ColorField,
+  Content,
+  ImageField,
+  RichTextField,
+} from '@prismicio/client';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import Image from 'next/image';
 
@@ -6,7 +11,7 @@ interface SimpleHeroProps {
   image: ImageField;
   title: RichTextField;
   description: RichTextField;
-  theme_color: string;
+  theme_color: ColorField;
   fullscreen: boolean;
 }
 

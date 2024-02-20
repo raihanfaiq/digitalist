@@ -1,4 +1,5 @@
 import {
+  ColorField,
   Content,
   ImageField,
   RichTextField,
@@ -12,7 +13,7 @@ interface HeroSimpleProps {
   image: ImageField;
   title: RichTextField;
   description: RichTextField;
-  theme_color: string;
+  theme_color: ColorField;
   fullscreen: boolean;
 }
 
