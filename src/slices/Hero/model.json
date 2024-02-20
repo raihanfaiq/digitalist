@@ -59,6 +59,22 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "theme_color": {
+          "type": "Color",
+          "config": {
+            "label": "theme color",
+            "placeholder": ""
+          }
+        },
+        "fullscreen": {
+          "type": "Boolean",
+          "config": {
+            "label": "fullscreen",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}
@@ -118,6 +134,22 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "theme_color": {
+          "type": "Color",
+          "config": {
+            "label": "theme color",
+            "placeholder": ""
+          }
+        },
+        "fullscreen": {
+          "type": "Boolean",
+          "config": {
+            "label": "fullscreen",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}
@@ -176,6 +208,22 @@
             "label": "callToActionLink",
             "placeholder": "",
             "select": null
+          }
+        },
+        "theme_color": {
+          "type": "Color",
+          "config": {
+            "label": "theme color",
+            "placeholder": ""
+          }
+        },
+        "fullscreen": {
+          "type": "Boolean",
+          "config": {
+            "label": "fullscreen",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
           }
         }
       },

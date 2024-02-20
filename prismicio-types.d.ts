@@ -866,6 +866,27 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   callToActionLink: prismic.LinkField;
+
+  /**
+   * theme color field in *Hero → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.theme_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  theme_color: prismic.ColorField;
+
+  /**
+   * fullscreen field in *Hero → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.primary.fullscreen
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  fullscreen: prismic.BooleanField;
 }
 
 /**
@@ -944,6 +965,27 @@ export interface HeroSliceImageRightPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   callToActionLink: prismic.LinkField;
+
+  /**
+   * theme color field in *Hero → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.theme_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  theme_color: prismic.ColorField;
+
+  /**
+   * fullscreen field in *Hero → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.primary.fullscreen
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  fullscreen: prismic.BooleanField;
 }
 
 /**
@@ -1022,6 +1064,27 @@ export interface HeroSliceHeroSimplePrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   callToActionLink: prismic.LinkField;
+
+  /**
+   * theme color field in *Hero → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.theme_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  theme_color: prismic.ColorField;
+
+  /**
+   * fullscreen field in *Hero → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.primary.fullscreen
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  fullscreen: prismic.BooleanField;
 }
 
 /**

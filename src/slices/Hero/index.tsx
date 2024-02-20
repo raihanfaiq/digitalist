@@ -7,7 +7,7 @@ import SimpleHeroRight from './variants/SimpleHeroRight';
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps): JSX.Element => {
-  const { image, title, description } = slice.primary;
+  const { image, title, description, theme_color, fullscreen } = slice.primary;
   switch (slice.variation) {
     case 'imageRight':
       return (
@@ -15,16 +15,30 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           image={image}
           title={title}
           description={description}
+          theme_color={theme_color}
+          fullscreen={fullscreen}
         />
       );
     case 'heroSimple':
       return (
-        <HeroSimple image={image} title={title} description={description} />
+        <HeroSimple
+          image={image}
+          title={title}
+          description={description}
+          theme_color={theme_color}
+          fullscreen={fullscreen}
+        />
       );
 
     default:
       return (
-        <SimpleHero image={image} title={title} description={description} />
+        <SimpleHero
+          image={image}
+          title={title}
+          description={description}
+          theme_color={theme_color}
+          fullscreen={fullscreen}
+        />
       );
   }
 };

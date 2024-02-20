@@ -69,6 +69,15 @@
 					"url": "https://prismic.io",
 					"target": ""
 				}
+			},
+			"theme_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#6bb60f",
+				"type": "Color"
+			},
+			"fullscreen": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []
@@ -151,6 +160,15 @@
 					"url": "https://prismic.io",
 					"target": ""
 				}
+			},
+			"theme_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#cf47ed",
+				"type": "Color"
+			},
+			"fullscreen": {
+				"__TYPE__": "BooleanContent",
+				"value": false
 			}
 		},
 		"items": [
@@ -192,7 +210,6 @@
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
@@ -210,6 +227,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"callToActionLabel": {
@@ -223,6 +243,15 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"theme_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#9a1db5",
+				"type": "Color"
+			},
+			"fullscreen": {
+				"__TYPE__": "BooleanContent",
+				"value": false
 			}
 		},
 		"items": [

@@ -12,11 +12,20 @@ interface HeroSimpleProps {
   image: ImageField;
   title: RichTextField;
   description: RichTextField;
+  theme_color: string;
+  fullscreen: boolean;
 }
 
-const HeroSimple = ({ image, title, description }: HeroSimpleProps) => {
+const HeroSimple = ({
+  image,
+  title,
+  description,
+  fullscreen,
+  theme_color,
+}: HeroSimpleProps) => {
   return (
-    <section className="container w-full h-screen rounded-t-2xl xl:pt-28">
+    <section
+      className={`container w-full ${fullscreen ? 'h-screen' : 'py-20'} rounded-t-2xl xl:pt-28`}>
       <div className="relative flex">
         <div className="flex flex-col-reverse items-center justify-center gap-8 lg:flex-col lg:text-center">
           <div className="flex flex-col items-start gap-5 lg:items-center">

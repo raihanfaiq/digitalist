@@ -6,12 +6,20 @@ interface SimpleHeroProps {
   image: ImageField;
   title: RichTextField;
   description: RichTextField;
+  theme_color: string;
+  fullscreen: boolean;
 }
 
-const SimpleHero = ({ image, title, description }: SimpleHeroProps) => {
+const SimpleHero = ({
+  image,
+  title,
+  description,
+  fullscreen,
+  theme_color,
+}: SimpleHeroProps) => {
   return (
     <section
-      className={`container h-screen rounded-t-2xl relative flex lg:flex-row flex-col-reverse`}>
+      className={`container ${fullscreen ? 'h-screen' : 'py-20'} rounded-t-2xl relative flex lg:flex-row flex-col-reverse`}>
       <div className="flex items-center w-full lg:w-1/2">
         <div className="max-w-2xl lg:mb-8">
           <div className="text-4xl font-bold tracking-tight text-[#FFF5EA] lg:text-6xl xl:leading-tight">

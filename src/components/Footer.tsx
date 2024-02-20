@@ -18,7 +18,7 @@ export default async function Footer() {
       className="container relative pb-10 mt-24 rounded-t-[40px]"
       style={{ backgroundColor: `${bg_color}` }}>
       <section>
-        <div className="grid grid-cols-5 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100">
+        <div className="flex flex-col-reverse gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 lg:grid lg:grid-cols-5">
           <div className="col-span-3">
             <Link href="/">
               <span className="flex items-center space-x-2 text-2xl font-medium">
