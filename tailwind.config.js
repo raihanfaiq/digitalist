@@ -24,11 +24,25 @@ module.exports = {
           '20%': { opacity: 1 },
           '100% ': { opacity: 0.2 },
         },
+        dexa: {
+          '0%': { transform: 'translateY(0%)' },
+          '50%': { transform: 'translateY(3%)' },
+          '100%': { transform: 'translateY(0%)' },
+        }
+      },
+      fontFamily: {
+        jost : ["var(--font-jost)"]
+      },
+      colors: {
+        'darkBlue-grad' : '#170972',
+        'normalBlue-grad' : '#1B3ECC',
+        'lightBlue-grad' : '#3CB9C3',
       },
       animation: {
         fadeIn: 'fadeIn .3s ease-in-out',
         carousel: 'marquee 60s linear infinite',
         blink: 'blink 1.4s both infinite',
+        upAndDown : 'dexa 4s ease-in-out infinite'
       },
     },
   },

@@ -14,7 +14,7 @@ export default async function Navigation() {
 
   return (
     <div
-      className={`sticky container top-5 z-10 py-2 w-[90%] backdrop-filter backdrop-blur-2xl mx-auto rounded-full`}
+      className={`fixed container top-5 right-1/2 translate-x-1/2 z-10 py-2 w-[90%] backdrop-filter backdrop-blur-2xl mx-auto rounded-full`}
       style={{ backgroundColor: `${bg_color}` }}>
       <div className="w-full">
         <nav className="relative flex items-center justify-between">
