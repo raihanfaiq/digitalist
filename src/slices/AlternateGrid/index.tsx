@@ -18,7 +18,7 @@ export type AlternateGridProps =
 const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
   const data = slice.primary;
   return (
-    <section className="container flex flex-wrap py-20 bg-[#FFF5EA] rounded-2xl lg:gap-10 lg:flex-nowrap">
+    <section className="container flex flex-wrap py-20 bg-[#FFF5EA] lg:gap-10 lg:flex-nowrap">
       <div
         className={`flex items-center justify-center w-full lg:w-1/2 ${
           slice.variation === 'imageRight' ? 'lg:order-1' : ''

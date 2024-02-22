@@ -58,7 +58,7 @@ const HeroOri = ({
           <PrismicNextImage field={image} className='animate-upAndDown w-full ' />
         </div>
       </div>
-      <div className="w-full h-12 z-10 rounded-[100%] bg-white absolute bottom-0 left-0 translate-y-1/2"></div>
+      <div className="w-full h-12 z-1 rounded-[100%] bg-[#FFF5EA] absolute bottom-0 left-0 translate-y-1/2"></div>
     </section>
   );
 };
