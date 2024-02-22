@@ -3,6 +3,7 @@ import { SliceComponentProps } from '@prismicio/react';
 import SimpleHero from './variants/SimpleHero';
 import HeroSimple from './variants/HeroSimple';
 import SimpleHeroRight from './variants/SimpleHeroRight';
+import HeroOri from './variants/HeroOri';
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -27,6 +28,18 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           description={description}
           theme_color={theme_color}
           fullscreen={fullscreen}
+        />
+      );
+    case 'heroOri':
+      return (
+        <HeroOri
+          image={image}
+          title={title}
+          description={description}
+          theme_color={theme_color}
+          fullscreen={fullscreen}
+          buttonLink={slice.primary.callToActionLink}
+          buttonText={slice.primary.callToActionLabel}
         />
       );
 

@@ -228,6 +228,74 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "heroOri",
+      "name": "HeroOri",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1,strong,em,heading2,heading3,heading4,heading5,heading6"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "callToActionLabel": {
+          "type": "Text",
+          "config": {
+            "label": "callToActionLabel",
+            "placeholder": ""
+          }
+        },
+        "callToActionLink": {
+          "type": "Link",
+          "config": {
+            "label": "callToActionLink",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "theme_color": {
+          "type": "Color",
+          "config": {
+            "label": "theme color",
+            "placeholder": ""
+          }
+        },
+        "fullscreen": {
+          "type": "Boolean",
+          "config": {
+            "label": "fullscreen",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

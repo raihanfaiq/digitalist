@@ -1101,12 +1101,102 @@ export type HeroSliceHeroSimple = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceHeroOriPrimary {
+  /**
+   * title field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * callToActionLabel field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.callToActionLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  callToActionLabel: prismic.KeyTextField;
+
+  /**
+   * callToActionLink field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.callToActionLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  callToActionLink: prismic.LinkField;
+
+  /**
+   * theme color field in *Hero → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.theme_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  theme_color: prismic.ColorField;
+
+  /**
+   * fullscreen field in *Hero → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero.primary.fullscreen
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  fullscreen: prismic.BooleanField;
+}
+
+/**
+ * HeroOri variation for Hero Slice
+ *
+ * - **API ID**: `heroOri`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceHeroOri = prismic.SharedSliceVariation<
+  "heroOri",
+  Simplify<HeroSliceHeroOriPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
 type HeroSliceVariation =
   | HeroSliceDefault
   | HeroSliceImageRight
-  | HeroSliceHeroSimple;
+  | HeroSliceHeroSimple
+  | HeroSliceHeroOri;
 
 /**
  * Hero Shared Slice
@@ -1501,10 +1591,12 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceImageRightPrimary,
       HeroSliceHeroSimplePrimary,
+      HeroSliceHeroOriPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceImageRight,
       HeroSliceHeroSimple,
+      HeroSliceHeroOri,
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceDefaultItem,
