@@ -15,12 +15,12 @@ import { PrismicNextImage, PrismicNextLink, PrismicNextLinkProps } from '@prismi
 
 const components : JSXMapSerializer = {
   heading1 : ({children})=> (
-    <h1 className="text-center md:text-left text-7xl font-bold font-jost ">
+    <h1 className="text-center md:text-left text-5xl md:text-7xl font-bold font-jost ">
       {children}
     </h1>
   ),
   paragraph : ({children})=>(
-    <p className="text-center md:text-left text-2xl mt-5 ">
+    <p className="text-center text-xl md:text-left md:text-2xl mt-5 ">
       {children}
     </p>
   )
@@ -47,12 +47,12 @@ const HeroOri = ({
 }: HeroSimpleProps) => {
   return (
     <section
-      className={`container w-full ${fullscreen ? 'h-screen' : 'py-20'} xl:pt-28 bg-gradient-to-r from-darkBlue-grad via-normalBlue-grad to-lightBlue-grad h-lvh flex items-center `}>
+      className={`container w-full ${fullscreen ? 'h-screen' : 'py-20'} xl:pt-28 bg-gradient-to-r from-darkBlue-grad via-normalBlue-grad to-lightBlue-grad h-lvh flex items-center relative `}>
       <div className="  flex gap-8 justify-center md:items-center xl:items-start">
         <div className=" pt-14 w-full  md:w-1/2 flex flex-col items-center md:items-start ">
           <PrismicRichText components={components} field={title} />
           <PrismicRichText components={components} field={description} />
-          <PrismicNextLink className=' w-fit px-12 py-4 bg-gradient-to-r from-darkBlue-grad from-50% to-blue-950 rounded-xl mt-14 inline-block font-bold tracking-wider hover:brightness-125 hover:rounded-none hover:duration-300 duration-300' field={buttonLink}>{buttonText}</PrismicNextLink>
+          <PrismicNextLink className=' scale-75 md:scale-100 w-fit px-12 py-4 bg-gradient-to-r from-darkBlue-grad from-50% to-blue-950 rounded-xl mt-14 inline-block font-bold tracking-wider hover:brightness-125 hover:rounded-none hover:duration-300 duration-300' field={buttonLink}>{buttonText}</PrismicNextLink>
         </div>
         <div className="w-2/5 hidden md:block">
           <PrismicNextImage field={image} className='animate-upAndDown w-full ' />

@@ -59,5 +59,6 @@ export default async function Navigation() {
       </div>
       {/* make navbar in mobile version */}
     </div>
+    // <div className=""></div>
   );
 }
