@@ -20,10 +20,10 @@ const FaqSection = ({ slice }: FaqSectionProps): JSX.Element => {
 
   return (
     <section
-      className="container px-4 mx-auto"
+      className=" px-4 mx-auto text-[#FFF5EA] bg-[#13075F] py-12 "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}>
-      <div className="flex flex-col xl:flex-row">
+      <div className="container flex flex-col xl:flex-row">
         <div className="flex flex-col items-center pb-5 text-4xl font-bold text-center xl:mr-4">
           <PrismicRichText field={slice.primary.title} />
           {isFilled.image(slice.primary.image) && (

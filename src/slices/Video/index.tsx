@@ -20,14 +20,16 @@ const Video = ({ slice }: VideoProps): JSX.Element => {
   const [Playing, setPlaying] = useState(false);
 
   return (
-    <section className="container relative flex items-center justify-center w-full py-20 rounded-t-2xl mx-auto xl:pt-28 h-80 aspect-w-16 aspect-h-9">
-      <ReactPlayer
-        controls={true}
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        playing={Playing}
-        url={slice.primary.video.embed_url}
-      />
+    <section className=" relative flex items-center justify-center w-full py-20 mx-auto xl:pt-28 h-80 aspect-w-16 aspect-h-9 bg-[#13075F]">
+      <div className="container mx-auto flex items-center justify-center">
+        <ReactPlayer
+          controls={true}
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          playing={Playing}
+          url={slice.primary.video.embed_url}
+        />
+      </div>
     </section>
   );
 };

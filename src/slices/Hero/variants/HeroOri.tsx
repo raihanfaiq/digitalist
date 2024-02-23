@@ -57,9 +57,9 @@ const HeroOri = ({
     <section
       className={`w-full bg-gradient-to-r from-darkBlue-grad via-normalBlue-grad to-lightBlue-grad h-lvh relative`}>
       <div
-        className={`container w-full ${fullscreen ? 'h-screen' : 'py-20'} xl:pt-28 h-lvh flex items-center relative`}
+        className={`container w-full ${fullscreen ? 'h-screen' : 'py-20'} xl:pt-28 h-lvh flex items-center`}
         style={{ color: '#FFF5EA' }}>
-        <div className="flex justify-center gap-8 md:items-center xl:items-start">
+        <div className="flex justify-center gap-8 mx-auto md:items-center xl:items-start">
           <div className="flex flex-col items-center w-full pt-14 md:w-1/2 md:items-start">
             <PrismicRichText components={components} field={title} />
             <PrismicRichText components={components} field={description} />
@@ -76,7 +76,7 @@ const HeroOri = ({
             />
           </div>
         </div>
-        <div className="container w-full h-12 z-1 rounded-[100%] bg-[#FFF5EA] absolute bottom-0 left-0 translate-y-1/2"></div>
+        <div className=" w-full h-12 z-1 rounded-[100%] bg-[#FFF5EA] absolute bottom-0 left-0 translate-y-1/2"></div>
       </div>
     </section>
   );

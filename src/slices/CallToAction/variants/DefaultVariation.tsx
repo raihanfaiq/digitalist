@@ -26,31 +26,26 @@ const DefaultVariation = ({
 }: RowVariationProps): JSX.Element => {
   return (
     <section
-      className={`container flex w-full flex-col py-20 rounded-t-2xl items-center justify-center text-center gap-5`}>
-      {/* {title && (
-        <div className="text-sm font-bold tracking-wider text-indigo-600 uppercase">
-          <PrismicRichText field={title} />
+      className={` w-full py-20 text-center bg-[#13075F]`}>
+        <div className="container flex items-center flex-col ">
+          {title && (
+            <div className="mt-3 text-2xl font-bold leading-snug w-3/4 tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-4xl">
+              <PrismicRichText field={title} />
+            </div>
+          )}
+          {isFilled.richText(paragraph) && (
+            <div className="w-[84%] py-4 text-lg leading-normal text-gray-200 xl:text-xl">
+              <PrismicRichText field={paragraph} />
+            </div>
+          )}
+          {isFilled.link(buttonLink) && (
+            <PrismicNextLink
+              className="px-8 my-8 py-4 text-lg font-medium text-center text-[#FFF5EA] bg-indigo-600 rounded-md"
+              field={buttonLink}>
+              {buttonLabel || 'Learn more…'}
+            </PrismicNextLink>
+          )}
         </div>
-      )} */}
-
-      {title && (
-        <div className="mt-3 text-2xl font-bold leading-snug w-3/4 tracking-tight text-[#FFF5EA] lg:leading-tight lg:text-4xl">
-          <PrismicRichText field={title} />
-        </div>
-      )}
-
-      {isFilled.richText(paragraph) && (
-        <div className="w-[84%] py-4 text-lg leading-normal text-gray-200 xl:text-xl">
-          <PrismicRichText field={paragraph} />
-        </div>
-      )}
-      {isFilled.link(buttonLink) && (
-        <PrismicNextLink
-          className="px-8 my-8 py-4 text-lg font-medium text-center text-[#FFF5EA] bg-indigo-600 rounded-md"
-          field={buttonLink}>
-          {buttonLabel || 'Learn more…'}
-        </PrismicNextLink>
-      )}
     </section>
   );
 };

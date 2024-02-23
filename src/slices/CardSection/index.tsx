@@ -12,8 +12,8 @@ export type CardSectionProps = SliceComponentProps<Content.CardSectionSlice>;
  */
 const CardSection = ({ slice }: CardSectionProps): JSX.Element => {
   return (
-    <section className="container flex justify-center w-full">
-      <div className="flex flex-col items-center w-full gap-8 pt-14 lg:py-24 lg:gap-20">
+    <section className="flex justify-center w-full bg-[#13075F]">
+      <div className="container flex flex-col items-center w-full gap-8 pt-14 lg:py-24 lg:gap-20">
         <div className="text-[#FFF5EA] text-3xl text-center lg:text-6xl font-bold items-center justify-center flex">
           <PrismicRichText field={slice.primary.title} />
         </div>

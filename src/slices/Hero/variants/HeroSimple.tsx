@@ -26,8 +26,8 @@ const HeroSimple = ({
 }: HeroSimpleProps) => {
   return (
     <section
-      className={`container w-full ${fullscreen ? 'h-screen' : 'py-20'} rounded-t-2xl xl:pt-28`}>
-      <div className="relative flex">
+      className={`w-full ${fullscreen ? 'h-screen' : 'py-20'} rounded-t-2xl pt-36 xl:pt-36 bg-[#13075F] `}>
+      <div className="container relative flex ">
         <div className="flex flex-col-reverse items-center justify-center gap-8 lg:flex-col lg:text-center">
           <div className="flex flex-col items-start gap-5 lg:items-center">
             <div className="text-4xl font-bold text-[#FFF5EA] lg:text-6xl xl:leading-tight">
