@@ -1,7 +1,7 @@
 import { PrismicPreview } from '@prismicio/next';
 import { createClient, repositoryName } from '@/prismicio';
 import { Jost } from 'next/font/google';
-import Navigation from '@/components/Navigation';
+import Navigation from '@/components/header/Navigation';
 import './global.css';
 import Footer from '@/components/Footer';
 

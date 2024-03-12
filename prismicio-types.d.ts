@@ -1281,9 +1281,104 @@ export type NavigationItemSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *NavigationItem → Primary*
+ */
+export interface NavigationItemSliceBlackVariationPrimary {
+  /**
+   * Company logo field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.company_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Company name field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * description field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.buttonlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonlink: prismic.LinkField;
+
+  /**
+   * Button Text field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *NavigationItem → Items*
+ */
+export interface NavigationItemSliceBlackVariationItem {
+  /**
+   * name field in *NavigationItem → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * link field in *NavigationItem → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * blackVariation variation for NavigationItem Slice
+ *
+ * - **API ID**: `blackVariation`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSliceBlackVariation = prismic.SharedSliceVariation<
+  "blackVariation",
+  Simplify<NavigationItemSliceBlackVariationPrimary>,
+  Simplify<NavigationItemSliceBlackVariationItem>
+>;
+
+/**
  * Slice variation for *NavigationItem*
  */
-type NavigationItemSliceVariation = NavigationItemSliceDefault;
+type NavigationItemSliceVariation =
+  | NavigationItemSliceDefault
+  | NavigationItemSliceBlackVariation;
 
 /**
  * NavigationItem Shared Slice
@@ -1600,8 +1695,11 @@ declare module "@prismicio/client" {
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceDefaultItem,
+      NavigationItemSliceBlackVariationPrimary,
+      NavigationItemSliceBlackVariationItem,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,
+      NavigationItemSliceBlackVariation,
       PortoSlice,
       PortoSliceDefaultPrimary,
       PortoSliceDefaultItem,

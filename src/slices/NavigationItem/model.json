@@ -52,6 +52,71 @@
           }
         }
       }
+    },
+    {
+      "id": "blackVariation",
+      "name": "blackVariation",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "company_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Company logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "company_name": {
+          "type": "Text",
+          "config": {
+            "label": "Company name",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "description",
+            "placeholder": ""
+          }
+        },
+        "buttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "name",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
     }
   ]
 }

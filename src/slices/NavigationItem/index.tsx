@@ -1,5 +1,6 @@
 import { docResolver } from '@/utils/prismic';
 import { Content } from '@prismicio/client';
+import { PrismicNextImage } from '@prismicio/next';
 import { SliceComponentProps } from '@prismicio/react';
 
 /**
@@ -15,7 +16,9 @@ const NavigationItem = ({ slice }: NavigationItemProps): JSX.Element => {
   const slices = slice.items;
   return (
     <section>
-      {/* MOVE TO /COMPONENTS NAVIGATION */}
+     <PrismicNextImage field={slice.primary.company_logo} />
+     <>{slice.primary.company_name}</>
+     <>{slice.primary.description}</>
     </section>
   );
 };
