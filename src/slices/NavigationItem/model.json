@@ -33,6 +33,29 @@
             "label": "description",
             "placeholder": ""
           }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "button_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Button Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {
@@ -83,20 +106,27 @@
             "placeholder": ""
           }
         },
-        "buttonlink": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "allowTargetBlank": false,
-            "select": null
-          }
-        },
         "button_text": {
           "type": "Text",
           "config": {
             "label": "Button Text",
             "placeholder": ""
+          }
+        },
+        "button_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Button Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
           }
         }
       },

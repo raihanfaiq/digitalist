@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionTimingFunction : {
+        'in-out-bounce' : 'cubic-bezier(.4,-0.33,.52,1.38)'
+      },
       keyframes: {
         fadeIn: {
           from: { opacity: 0 },
@@ -31,7 +34,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        jost : ["var(--font-jost)"]
+        jost : ["var(--font-jost)"],
+        sen : ["var(--font-sen)"]
       },
       colors: {
         'darkBlue-grad' : '#170972',
